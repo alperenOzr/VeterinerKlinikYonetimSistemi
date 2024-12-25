@@ -11,6 +11,7 @@ namespace VeterinerKlinikYonetimSistemi
         public int SahipID { get; set; }
         public string? Isim { get; set; }
         public string? Soyisim { get; set; }
+        public string? Adres { get; set; }
         public string? Telefon { get; set; }
         public DateTime KayitTarihi { get; set; }
     }

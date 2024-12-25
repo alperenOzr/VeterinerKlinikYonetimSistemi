@@ -4,17 +4,8 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="HayvanlariListele.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="HayvanSahipleriListe.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="KlinikListele.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="MuayeneListele.cs">
-      <SubType>UserControl</SubType>
+    <Compile Update="MessageBoxForm.cs">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
 </Project>

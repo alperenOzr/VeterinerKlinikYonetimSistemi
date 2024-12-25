@@ -4,7 +4,6 @@ C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\bin\Debug\net8.0
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\bin\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.dll
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\bin\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.pdb
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.Form1.resources
-C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.HayvanSahipleriListe.resources
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.csproj.GenerateResource.cache
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.AssemblyInfoInputs.cache
@@ -51,6 +50,5 @@ C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\bin\Debug\net8.0
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.csproj.AssemblyReference.cache
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.csproj.CopyComplete
-C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.HayvanlariListele.resources
-C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.KlinikListele.resources
-C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.MuayeneListele.resources
+C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.sourcelink.json
+C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.MessageBoxForm.resources
