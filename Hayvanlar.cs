@@ -14,8 +14,8 @@ namespace VeterinerKlinikYonetimSistemi
         public string? Cins { get; set; }
         public int Yas { get; set; }
         public bool EvcilMi { get; set; }
-        public string? SahipAd { get; set; } // Yeni alan
-        public string? SahipTelefon { get; set; } // Yeni alan
-        public string? KlinikAd { get; set; } // Yeni alan
+        public string? SahipAd { get; set; }
+        public string? SahipTelefon { get; set; }
+        public string? KlinikAd { get; set; }
     }
 }

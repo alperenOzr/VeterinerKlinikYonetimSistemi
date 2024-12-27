@@ -48,8 +48,16 @@ namespace VeterinerKlinikYonetimSistemi
             List<Hayvanlar> hayvanlarListe = [];
             SqlCommand cmd = new(@"
             SELECT 
-                h.HayvanId, h.Isim, h.Tur, h.Cins, h.Yas, h.EvcilMi, h.SahipID, h.KlinikID, 
-                s.Isim AS SahipAd, s.Telefon AS SahipTelefon,
+                h.HayvanId,
+                h.Isim,
+                h.Tur,
+                h.Cins, 
+                h.Yas, 
+                h.EvcilMi, 
+                h.SahipID, 
+                h.KlinikID, 
+                s.Isim AS SahipAd,
+                s.Telefon AS SahipTelefon,
                 k.Isim AS KlinikAd
             FROM 
                 Hayvanlar h
@@ -114,23 +122,44 @@ namespace VeterinerKlinikYonetimSistemi
             SqlConnection con = new(sqlString);
             con.Open();
             List<Muayene> MuayeneListe = [];
-            SqlCommand cmd = new("SELECT * FROM Muayeneler", con);
+            SqlCommand cmd = new(
+            @"SELECT 
+                m.MuayeneId, 
+                m.Tarih AS MuayeneTarihi, 
+                h.Isim AS HayvanIsmi,
+                h.Tur AS HayvanTuru,
+                h.Cins AS HayvanCinsi,
+                s.Isim AS SahipIsmi,
+                s.Telefon AS SahipTelefon,
+                k.Isim AS KlinikAdi,
+                m.YapilanIslemler,
+                m.Notlar
+            FROM 
+                muayeneler m
+            LEFT JOIN 
+                hayvanlar h ON m.HayvanId = h.HayvanId
+            LEFT JOIN 
+                sahipler s ON h.SahipId = s.SahipID
+            LEFT JOIN 
+                klinikler k ON m.KlinikId = k.KlinikID
+            ORDER BY 
+                m.Tarih DESC;", con);
 
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                // Her bir satýr için yeni bir Sahipler nesnesi oluþturuyoruz
                 Muayene muayene = new()
                 {
-                    Id = dr["MuayeneID"] != DBNull.Value ? Convert.ToInt32(dr["MuayeneID"]) : 0,
-                    HayvanId = dr["HayvanID"] != DBNull.Value ? Convert.ToInt32(dr["HayvanID"]) : 0,
-                    KlinikId = dr["KlinikID"] != DBNull.Value ? Convert.ToInt32(dr["KlinikID"]) : 0,
-                    Tarih = dr["Tarih"] != DBNull.Value ? Convert.ToDateTime(dr["Tarih"]) : default(DateTime),
+                    Id = dr["MuayeneId"] != DBNull.Value ? Convert.ToInt32(dr["MuayeneId"]) : 0,
+                    Tarih = dr["MuayeneTarihi"] != DBNull.Value ? Convert.ToDateTime(dr["MuayeneTarihi"]) : default(DateTime),
                     YapilanIslemler = dr["YapilanIslemler"] != DBNull.Value ? dr["YapilanIslemler"].ToString() : "-",
-                    Notlar = dr["Notlar"] != DBNull.Value ? dr["Notlar"].ToString() : "-"
-
+                    Notlar = dr["Notlar"] != DBNull.Value ? dr["Notlar"].ToString() : "-",
+                    HayvanIsim = dr["HayvanIsmi"] != DBNull.Value ? dr["HayvanIsmi"].ToString() : "-",
+                    HayvanTur = dr["HayvanTuru"] != DBNull.Value ? dr["HayvanTuru"].ToString() : "-",
+                    HayvanCins = dr["HayvanCinsi"] != DBNull.Value ? dr["HayvanCinsi"].ToString() : "-",
+                    HayvanSahibi = dr["SahipIsmi"] != DBNull.Value ? dr["SahipIsmi"].ToString() : "-",
+                    HayvanSahibiTel = dr["SahipTelefon"] != DBNull.Value ? dr["SahipTelefon"].ToString() : "-"
                 };
-                // Listeye ekliyoruz
                 MuayeneListe.Add(muayene);
             }
             con.Close();
@@ -141,7 +170,7 @@ namespace VeterinerKlinikYonetimSistemi
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
+            int selectedId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
         }
 
         private void SilSorgusu(int dataTablosu, int id)
@@ -198,7 +227,6 @@ namespace VeterinerKlinikYonetimSistemi
                         klinikSilCmd.Parameters.AddWithValue("@Id", id);
                         klinikSilCmd.ExecuteNonQuery();
                         MessageBox.Show($"Klinik ID {id} baþarýyla silindi.");
-
                     }
                     catch (SqlException ex)
                     {
@@ -263,12 +291,12 @@ namespace VeterinerKlinikYonetimSistemi
                 }
                 else
                 {
-                    MessageBox.Show("Silme iþlemi iptal edildi.");
+                    _ = MessageBox.Show("Silme iþlemi iptal edildi.");
                 }
             }
             else
             {
-                MessageBox.Show("Lütfen silmek istediðiniz bir satýr seçin!");
+                _ = MessageBox.Show("Lütfen silmek istediðiniz bir satýr seçin!");
             }
         }
 
@@ -279,7 +307,7 @@ namespace VeterinerKlinikYonetimSistemi
                 Ekle.ShowDialog();
                 YenileTablo();
             } else {
-                MessageBox.Show("Geçersiz Tablo Seçili");
+                _ = MessageBox.Show("Geçerli Bir Tablo Seçiniz!");
             }
 
         }
