@@ -38,6 +38,7 @@
             klinikPnl = new Panel();
             EkleBtn = new Button();
             SilBtn = new Button();
+            GuncelleBtn = new Button();
             panel1.SuspendLayout();
             dataGridPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -53,8 +54,9 @@
             panel1.Controls.Add(sahipListeleBtn);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(183, 600);
+            panel1.Size = new Size(160, 450);
             panel1.TabIndex = 0;
             // 
             // MuayeneleriListeleBtn
@@ -64,10 +66,10 @@
             MuayeneleriListeleBtn.FlatStyle = FlatStyle.Flat;
             MuayeneleriListeleBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MuayeneleriListeleBtn.ForeColor = Color.Black;
-            MuayeneleriListeleBtn.Location = new Point(0, 225);
+            MuayeneleriListeleBtn.Location = new Point(0, 168);
             MuayeneleriListeleBtn.Margin = new Padding(0);
             MuayeneleriListeleBtn.Name = "MuayeneleriListeleBtn";
-            MuayeneleriListeleBtn.Size = new Size(183, 75);
+            MuayeneleriListeleBtn.Size = new Size(160, 56);
             MuayeneleriListeleBtn.TabIndex = 3;
             MuayeneleriListeleBtn.Text = "Muayeneleri Listele";
             MuayeneleriListeleBtn.UseVisualStyleBackColor = false;
@@ -80,10 +82,10 @@
             KlinikListeleBtn.FlatStyle = FlatStyle.Flat;
             KlinikListeleBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             KlinikListeleBtn.ForeColor = Color.Black;
-            KlinikListeleBtn.Location = new Point(0, 150);
+            KlinikListeleBtn.Location = new Point(0, 112);
             KlinikListeleBtn.Margin = new Padding(0);
             KlinikListeleBtn.Name = "KlinikListeleBtn";
-            KlinikListeleBtn.Size = new Size(183, 75);
+            KlinikListeleBtn.Size = new Size(160, 56);
             KlinikListeleBtn.TabIndex = 2;
             KlinikListeleBtn.Text = "Klinikleri Listele";
             KlinikListeleBtn.UseVisualStyleBackColor = false;
@@ -96,10 +98,10 @@
             HayvanListeleBtn.FlatStyle = FlatStyle.Flat;
             HayvanListeleBtn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             HayvanListeleBtn.ForeColor = Color.Black;
-            HayvanListeleBtn.Location = new Point(0, 75);
+            HayvanListeleBtn.Location = new Point(0, 56);
             HayvanListeleBtn.Margin = new Padding(0);
             HayvanListeleBtn.Name = "HayvanListeleBtn";
-            HayvanListeleBtn.Size = new Size(183, 75);
+            HayvanListeleBtn.Size = new Size(160, 56);
             HayvanListeleBtn.TabIndex = 1;
             HayvanListeleBtn.Text = "Hayvanları Listele";
             HayvanListeleBtn.UseVisualStyleBackColor = false;
@@ -115,7 +117,7 @@
             sahipListeleBtn.Location = new Point(0, 0);
             sahipListeleBtn.Margin = new Padding(0);
             sahipListeleBtn.Name = "sahipListeleBtn";
-            sahipListeleBtn.Size = new Size(183, 75);
+            sahipListeleBtn.Size = new Size(160, 56);
             sahipListeleBtn.TabIndex = 0;
             sahipListeleBtn.Text = "Hayvan Sahiplerini Listele";
             sahipListeleBtn.UseVisualStyleBackColor = false;
@@ -125,9 +127,10 @@
             // 
             dataGridPnl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridPnl.Controls.Add(dataGridView1);
-            dataGridPnl.Location = new Point(183, 150);
+            dataGridPnl.Location = new Point(160, 112);
+            dataGridPnl.Margin = new Padding(3, 2, 3, 2);
             dataGridPnl.Name = "dataGridPnl";
-            dataGridPnl.Size = new Size(1047, 450);
+            dataGridPnl.Size = new Size(916, 338);
             dataGridPnl.TabIndex = 6;
             dataGridPnl.Visible = false;
             // 
@@ -139,29 +142,33 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1047, 450);
+            dataGridView1.Size = new Size(916, 338);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
             // 
             // klinikPnl
             // 
+            klinikPnl.Controls.Add(GuncelleBtn);
             klinikPnl.Controls.Add(EkleBtn);
             klinikPnl.Controls.Add(SilBtn);
             klinikPnl.Dock = DockStyle.Top;
-            klinikPnl.Location = new Point(183, 0);
+            klinikPnl.Location = new Point(160, 0);
+            klinikPnl.Margin = new Padding(3, 2, 3, 2);
             klinikPnl.Name = "klinikPnl";
-            klinikPnl.Size = new Size(1047, 150);
+            klinikPnl.Size = new Size(916, 112);
             klinikPnl.TabIndex = 7;
             // 
             // EkleBtn
             // 
-            EkleBtn.Location = new Point(184, 46);
+            EkleBtn.Location = new Point(161, 34);
+            EkleBtn.Margin = new Padding(3, 2, 3, 2);
             EkleBtn.Name = "EkleBtn";
-            EkleBtn.Size = new Size(94, 29);
+            EkleBtn.Size = new Size(82, 22);
             EkleBtn.TabIndex = 1;
             EkleBtn.Text = "Ekle";
             EkleBtn.UseVisualStyleBackColor = true;
@@ -169,24 +176,37 @@
             // 
             // SilBtn
             // 
-            SilBtn.Location = new Point(57, 46);
+            SilBtn.Location = new Point(50, 34);
+            SilBtn.Margin = new Padding(3, 2, 3, 2);
             SilBtn.Name = "SilBtn";
-            SilBtn.Size = new Size(94, 29);
+            SilBtn.Size = new Size(82, 22);
             SilBtn.TabIndex = 0;
             SilBtn.Text = "Sil";
             SilBtn.UseVisualStyleBackColor = true;
             SilBtn.Click += SilBtn_Click;
             // 
+            // GuncelleBtn
+            // 
+            GuncelleBtn.Location = new Point(272, 34);
+            GuncelleBtn.Margin = new Padding(3, 2, 3, 2);
+            GuncelleBtn.Name = "GuncelleBtn";
+            GuncelleBtn.Size = new Size(82, 22);
+            GuncelleBtn.TabIndex = 2;
+            GuncelleBtn.Text = "Güncelle";
+            GuncelleBtn.UseVisualStyleBackColor = true;
+            GuncelleBtn.Click += GuncelleBtn_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 40, 49);
-            ClientSize = new Size(1230, 600);
+            ClientSize = new Size(1076, 450);
             Controls.Add(klinikPnl);
             Controls.Add(dataGridPnl);
             Controls.Add(panel1);
-            MinimumSize = new Size(1245, 636);
+            Margin = new Padding(3, 2, 3, 2);
+            MinimumSize = new Size(1091, 487);
             Name = "Form1";
             Text = "Veteriner Klinik Yönetim Sistemi";
             panel1.ResumeLayout(false);
@@ -210,5 +230,6 @@
         private Button button1;
         private Button SilBtn;
         private Button EkleBtn;
+        private Button GuncelleBtn;
     }
 }

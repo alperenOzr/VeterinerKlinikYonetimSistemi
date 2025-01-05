@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VeterinerKlinikYonetimSistemi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12bd280c0762d95f9c1ea83ddbde4ab38ebc2986")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0cd9148b62b5cfe60dad4d3f3b10f7dfe67d9ba6")]
 [assembly: System.Reflection.AssemblyProductAttribute("VeterinerKlinikYonetimSistemi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VeterinerKlinikYonetimSistemi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

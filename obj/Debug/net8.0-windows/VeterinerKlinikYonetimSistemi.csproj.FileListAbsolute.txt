@@ -52,3 +52,4 @@ C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.csproj.CopyComplete
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.sourcelink.json
 C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.MessageBoxForm.resources
+C:\Users\alper\Desktop\db_project\VeterinerKlinikYonetimSistemi\obj\Debug\net8.0-windows\VeterinerKlinikYonetimSistemi.GuncelleForm.resources

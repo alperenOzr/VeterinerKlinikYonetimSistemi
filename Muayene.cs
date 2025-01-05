@@ -8,6 +8,7 @@
         public string? HayvanCins { get; set; }
         public string? HayvanSahibi { get; set; }
         public string? HayvanSahibiTel { get; set; }
+        public string? KlinikAdi { get; set; }
         public DateTime Tarih { get; set; }
         public string? YapilanIslemler { get; set; }
         public string? Notlar { get; set; }

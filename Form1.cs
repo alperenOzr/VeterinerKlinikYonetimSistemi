@@ -106,7 +106,7 @@ namespace VeterinerKlinikYonetimSistemi
                     Isim = dr["Isim"].ToString(),
                     Adres = dr["Adres"].ToString(),
                     Telefon = dr["Telefon"].ToString(),
-                    BakilanHayvan = Convert.ToInt32(dr["ToplamBakilanHayvanSayisi"]),
+                    BakilanHayvan = Convert.ToInt32(dr["KayitliHayvanlar"]),
                 };
                 // Listeye ekliyoruz
                 klinikListe.Add(klinik);
@@ -119,7 +119,7 @@ namespace VeterinerKlinikYonetimSistemi
 
         private void MuayeneleriListeleBtn_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new(sqlString);
+           SqlConnection con = new(sqlString);
             con.Open();
             List<Muayene> MuayeneListe = [];
             SqlCommand cmd = new(
@@ -158,7 +158,8 @@ namespace VeterinerKlinikYonetimSistemi
                     HayvanTur = dr["HayvanTuru"] != DBNull.Value ? dr["HayvanTuru"].ToString() : "-",
                     HayvanCins = dr["HayvanCinsi"] != DBNull.Value ? dr["HayvanCinsi"].ToString() : "-",
                     HayvanSahibi = dr["SahipIsmi"] != DBNull.Value ? dr["SahipIsmi"].ToString() : "-",
-                    HayvanSahibiTel = dr["SahipTelefon"] != DBNull.Value ? dr["SahipTelefon"].ToString() : "-"
+                    HayvanSahibiTel = dr["SahipTelefon"] != DBNull.Value ? dr["SahipTelefon"].ToString() : "-",
+                    KlinikAdi = dr["KlinikAdi"] != DBNull.Value ? dr["KlinikAdi"].ToString() : "-"
                 };
                 MuayeneListe.Add(muayene);
             }
@@ -171,6 +172,7 @@ namespace VeterinerKlinikYonetimSistemi
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int selectedId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+            GuncelleBtn_Click(sender, e);
         }
 
         private void SilSorgusu(int dataTablosu, int id)
@@ -181,6 +183,27 @@ namespace VeterinerKlinikYonetimSistemi
             switch (dataTablosu)
             {
                 case 1: // Sahipler tablosu
+                    string query = "UPDATE Hayvanlar SET SahipID = NULL WHERE SahipID = @SahipID";
+
+                    using (SqlCommand cmd = new(query, con))
+                    {
+                        // Güncellenecek SahipID'yi belirle
+                        cmd.Parameters.AddWithValue("@SahipID", id); // verilenSahipID güncellemek istediðiniz ID
+
+                        // Sorguyu çalýþtýr
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                    }
+                    string query1 = "UPDATE Muayeneler SET SahipID = NULL WHERE SahipID = @SahipID";
+
+                    using (SqlCommand cmd = new(query1, con))
+                    {
+                        // Güncellenecek SahipID'yi belirle
+                        cmd.Parameters.AddWithValue("@SahipID", id); // verilenSahipID güncellemek istediðiniz ID
+
+                        // Sorguyu çalýþtýr
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                    }
+
                     SqlCommand sahipSilCmd = new("DELETE FROM Sahipler WHERE SahipID = @Id", con);
                     sahipSilCmd.Parameters.AddWithValue("@Id", id);
                     sahipSilCmd.ExecuteNonQuery();
@@ -302,14 +325,29 @@ namespace VeterinerKlinikYonetimSistemi
 
         private void EkleBtn_Click(object sender, EventArgs e)
         {
-            if(dataSource != 0) {
+            if (dataSource != 0)
+            {
                 MessageBoxForm Ekle = new(dataSource);
                 Ekle.ShowDialog();
                 YenileTablo();
-            } else {
+            }
+            else
+            {
                 _ = MessageBox.Show("Geçerli Bir Tablo Seçiniz!");
             }
 
+        }
+
+        private void GuncelleBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                GuncelleForm guncelleForm = new(dataSource, selectedId);
+                guncelleForm.ShowDialog();
+                // Tabloyu yenile
+                YenileTablo();
+            }
         }
     }
 }

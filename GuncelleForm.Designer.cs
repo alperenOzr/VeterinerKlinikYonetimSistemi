@@ -1,6 +1,6 @@
 ﻿namespace VeterinerKlinikYonetimSistemi
 {
-    partial class MessageBoxForm
+    partial class GuncelleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,15 @@
         {
             SuspendLayout();
             // 
-            // MessageBoxForm
+            // GuncelleForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(318, 341);
-            Name = "MessageBoxForm";
-            Text = "MessageBoxForm";
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(312, 358);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "GuncelleForm";
+            Text = "GuncelleForm";
             ResumeLayout(false);
         }
 
